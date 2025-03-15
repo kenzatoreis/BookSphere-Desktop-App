@@ -1,0 +1,80 @@
+-- -- Inserting Users (students and faculty)
+-- INSERT INTO Users (user_id, user_fname, user_lname, user_email) VALUES 
+-- (21, 'Amira', 'Khalil', 'A.Khalil@aui.ma'),
+-- (22, 'Zakaria', 'El Idrissi', 'Z.Elidrissi@aui.ma'),
+-- (23, 'Leila', 'Bouziane', 'L.Bouziane@aui.ma'),
+-- (24, 'Hassan', 'Fassi', 'H.Fassi@aui.ma');
+-- SELECT * FROM Users;
+-- Inserting Categories specific to university disciplines
+-- INSERT INTO Category (cat_id, cat_name, cat_description) VALUES 
+-- (55, 'Computer Science', 'Textbooks covering topics from programming to network security'),
+-- (56, 'Biology', 'Comprehensive resources on biological sciences from molecular to zoology'),
+-- (57, 'Mathematics', 'Books ranging from basic algebra to advanced calculus'),
+-- (58, 'Engineering', 'Resources for various engineering disciplines, including civil and mechanical'),
+-- (59, 'Business', 'Textbooks on business management, economics, and marketing strategies'),
+-- (60, 'Literature', 'Analytical and historical texts on world literature'),
+-- (61, 'Physics', 'Fundamental and advanced physics textbooks for undergraduates and graduates'),
+-- (62, 'Chemistry', 'Chemical sciences textbooks covering organic, inorganic, and physical chemistry'),
+-- (63, 'Art and Design', 'Textbooks covering theories and practices in various art and design fields');
+-- SELECT * FROM Category;
+-- Inserting Books
+-- INSERT INTO Book (book_id, b_title, b_author, b_isbn, b_price, cat_id) VALUES 
+-- (19, 'Introduction to Algorithms', 'Thomas H. Cormen', '9780262033848', 100.00, 55),
+-- (20, 'Molecular Biology of the Cell', 'Bruce Alberts', '9780815344322', 120.00, 56),
+-- (21, 'Principles of Mathematical Analysis', 'Walter Rudin', '9780070542358', 75.00, 57),
+-- (22, 'Structural Analysis', 'Russell C. Hibbeler', '9780134610672', 95.00, 58),
+-- (23, 'Principles of Marketing', 'Philip Kotler', '9780133856460', 85.00, 59),
+-- (24, 'The Norton Anthology of English Literature', 'Stephen Greenblatt', '9780393603125', 65.00, 60),
+-- (25, 'Fundamentals of Physics', 'David Halliday', '9780470469118', 85.50, 61),
+-- (26, 'Organic Chemistry', 'Paula Yurkanis Bruice', '9780134042282', 130.00, 62),
+-- (27, 'Design Basics', 'David A. Lauer', '9781285858227', 50.00, 63);
+-- SELECT * FROM Book;
+-- Insert Orders
+-- INSERT INTO Orders (order_id, status, date, total_amount, user_id) VALUES 
+-- (45,'Completed', '2024-05-10', 205.50, 21),  
+-- (46,'Pending', '2024-05-12', 150.75, 22),    
+-- (47,'Pending', '2024-05-15', 225.50, 23),   
+-- (48,'Completed', '2024-05-18', 90.00, 24);   
+-- SELECT * FROM Orders;
+-- -- Insert OrderDetails
+-- INSERT INTO OrderDetail (order_id, book_id, quantity, subtotal) VALUES 
+-- (45, 19, 1, 100.00),  -- Algorithms book
+-- (46, 21, 1, 75.00),   -- Math book
+-- (47, 20, 1, 120.00),  -- Biology book
+-- (48, 26, 1, 130.00);  -- Chemistry book
+-- SELECT * FROM OrderDetail;
+-- Inserting Payments
+-- INSERT INTO Payment (payment_method, payment_date, payment_amount, order_id) VALUES 
+-- ('Credit Card', '2024-05-10', 100.00, 45),     -- Total for order 45
+-- ('PayPal', '2024-05-15', 75.00, 46),           -- Total for order 46
+-- ('Bank Transfer', '2024-05-12', 120.00, 47),   -- Total for order 47
+-- ('Debit Card', '2024-05-18', 130.00, 48)       -- Total for order 48
+-- ON CONFLICT DO NOTHING;
+-- SELECT * FROM Payment;
+-- Inserting Inventory
+-- INSERT INTO Inventory (book_id, b_quantity) VALUES 
+-- (19, 50),  -- Algorithms
+-- (20, 30),  -- Biology
+-- (21, 40),  -- Math
+-- (22, 20),  -- Engineering
+-- (23, 45),  -- Marketing
+-- (24, 35),  -- Literature
+-- (25, 15),  -- Physics
+-- (26, 25); -- Chemistry
+
+-- SELECT * FROM Inventory;
+-- Insert Report
+-- INSERT INTO Report (report_id,date_generated, total_sales, order_id) VALUES
+-- (29,'2024-05-10', 671.75, 45),
+-- (30,'2024-05-15', 461.50, 46),
+-- (31,'2024-05-12', 501.20, 47),
+-- (32,'2024-05-18', 874.00, 48);
+-- SELECT * FROM Report;
+-- -- Insert ReportOrder
+-- INSERT INTO ReportOrder (report_id, order_id) VALUES 
+-- (29, 45),
+-- (30, 46),
+-- (31, 47),
+-- (32, 48);
+-- SELECT * FROM ReportOrder;
+
