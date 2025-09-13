@@ -1,6 +1,6 @@
 # BookSphere-Desktop-App
 --
-This project was done for the Database System class.
+This project was made for the Database Systems class.
 
 The application architecture combines Tkinter for the frontend GUI development, Python as
 the primary programming language, Psycopg2 for interacting with the PostgreSQL backend,
